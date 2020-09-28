@@ -4,7 +4,7 @@
 
 Speciální syntaxí je možné také vytvářet jednoduché podmínky, které reagují na to, zda proměnná existuje nebo nikoliv. Pokud tedy chcete řádek se zadaným e-mailem vypsat jen pokud byl e-mail zadaný, můžete to provést následujícími způsoby.
 
-```pug
+```handlebars
 {{#email}}Na zadaný e-mail {{email}} vám zašleme potvrzení.{{/email}}
 ```
 
@@ -14,7 +14,7 @@ Zároveň je nutné podmínku také ukončit. K tomu slouží znak ``/``, násle
 
 Podobným způsobem můžete vytvořit negativní podmínku:
 
-```pug
+```handlebars
 {{^email}}Nezadali jste e-mail, takže potvrzení vám zasílat nebudeme.{{/email}}
 ```
 
@@ -27,7 +27,7 @@ Stejně jako v předchozím případě je nutné podmínku také ukončit. K tom
 
 Pro složitější podmínky se hodí [funkce](funkce.md) ``#if``. Která má podobnou syntaxi:
 
-```pug
+```handlebars
 {{#if email}}
   Na zadaný e-mail {{email}} vám zašleme potvrzení.
 {{/if}}
