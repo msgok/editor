@@ -1,5 +1,7 @@
 # Podmínky
 
+Podmínky umožňují v jednom boxu zobrazovat různé stavy na základě hodnot proměnných.
+
 ## Jednoduchá podmínka
 
 Speciální syntaxí je možné také vytvářet jednoduché podmínky, které reagují na to, zda proměnná existuje nebo nikoliv. Pokud tedy chcete řádek se zadaným e-mailem vypsat jen pokud byl e-mail zadaný, můžete to provést následujícími způsoby.
