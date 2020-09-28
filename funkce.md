@@ -47,7 +47,7 @@ Slouží k úpravě formátu data a času. Běžně se při práci s API a dalš
 Příklady
 
 ```handlebars
-{{date "2 years ago" "YYYY-mm-dd"}}
+{{date "2 years ago" "YYYY-MM-DD"}}
 ```
 
 Vypíše: ``2018-09-01`` (dnešní datum před dvěma lety)
