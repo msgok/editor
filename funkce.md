@@ -27,7 +27,22 @@ Slouží k úpravě formátu data a času. Běžně se při práci s API a dalš
 **Parametry**
  - ``date`` název funkce
  - ``X`` zdrojové datum *(konkrétní text nebo proměnná)*
- - ``Y`` formát data *(text)*
+ - ``Y`` formát data viz níže *(text)*
+ 
+ **Formát data**
+ - ``YYYY`` vypíše rok (4 číslice, např. 2020)
+ - ``YY`` vypíše rok (2 číslice, napč. 99)
+ - ``MM`` vypíše měsíc (2 číslice, např. 03)
+ - ``M`` vypíše měsíc (1-2 číslice, např. 9)
+ - ``Q`` vypíše číslo kvartálu (1 číslice, např. 3)
+ - ``DD`` vypíše den v měsici (2 číslice, např. 03)
+ - ``D`` vypíše den v měsíci (1-2 číslice, např. 9)
+ - ``HH`` vypíše hodinu (2 číslice, např. 03)
+ - ``H`` vypíše hodinu (1-2 číslice, např. 9)
+ - ``mm`` vypíše minutu (2 číslice, např. 03)
+ - ``m`` vypíše minutu (1-2 číslice např. 9)
+ - ``ss`` vypíše sekundu (2 číslice, např. 03)
+ - ``s`` vypíše sekundu (1-2 číslice, např. 9)
 
 Příklady
 
@@ -38,11 +53,15 @@ Příklady
 Vypíše: ``2018-09-01`` (dnešní datum před dvěma lety)
 
 ```handlebars
-{{date ordered "dd.mm."}}
+{{date ordered "D.M."}}
 ```
 
 Vypíše: ``14.2.`` (datum z proměnné ``ordered`` převede do formátu ``14.2.``)
 
+```handlebars
+{{date ordered "DD.MM.YYYY"}}
+```
+Vypíše: ``01.02.2020`` (datum z proměnné ``ordered`` převede do formátu ``01.02.``)
 
 ## Funkce ``inflect``
 
