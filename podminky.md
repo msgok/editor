@@ -14,7 +14,7 @@ Zároveň je nutné podmínku také ukončit. K tomu slouží znak ``/``, násle
 
 Podobným způsobem můžete vytvořit negativní podmínku:
 
-```
+```pug
 {{^email}}Nezadali jste e-mail, takže potvrzení vám zasílat nebudeme.{{/email}}
 ```
 
@@ -25,9 +25,9 @@ Stejně jako v předchozím případě je nutné podmínku také ukončit. K tom
 
 ## Podmínky buď a nebo
 
-Pro složitější podmínky se hodí [funkce.md](funkce) ``#if``. Která má podobnou syntaxi:
+Pro složitější podmínky se hodí [funkce](funkce.md) ``#if``. Která má podobnou syntaxi:
 
-```
+```pug
 {{#if email}}
   Na zadaný e-mail {{email}} vám zašleme potvrzení.
 {{/if}}
