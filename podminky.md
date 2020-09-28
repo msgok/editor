@@ -96,7 +96,7 @@ Pokud používáte funkci ``#if`` lze její zápis kombinovat s funkcí ``#unles
 {{#if telefon}}
   Zadali jste telefon.
 {{else unless email}}
-  Nezadali jste telefon ani e-mail.
+  Nezadali jste telefon a nezadali jste ani e-mail.
 {{else}}
   Zadali jste e-mail, ale nezadali telefon.
 {{/if}}
@@ -108,6 +108,6 @@ Pokud používáte funkci ``#if`` lze její zápis kombinovat s funkcí ``#unles
 {{else if email}}
   Zadali jste telefon, a zadali jste i e-mail.
 {{else}}
-  Nezadali jste e-mail, ale zadali jste telefon.
+  Zadali jste telefon, ale nezadali jste e-mail.
 {{/unless}}
 ```
