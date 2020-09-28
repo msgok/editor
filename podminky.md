@@ -65,7 +65,7 @@ Podobně jako ``#if`` funguje také opačná varianta a to funkce ``#unless`` kt
   Nezadali jste e-mail.
 {{else}}
   Zadali jste e-mail i telefon.
-{{/if}}
+{{/unless}}
 ```
 
 Uvedené podmínky s využitím ``#if`` nebo ``#unless`` vždy fungují tak, že kontrola podmínek se vždy zastaví na prvním pozitivním vyhodnocení. Je tedy důležité jejich pořadí a také to, jak uvedené proměnné vytváříte ve scénáři. Pokud se zákazníka nejprve ptáte na ``telefon`` a až v druhém kroku na ``email`` měla by tomu odpovídat i uvedená podmínka a nejprve kontrolovat zda je zadán ``telefon`` a až v druhém kroku, zda je zadán ``email``. V opačném případě by podmínka vždy skončila na prvním kroku.
@@ -79,7 +79,7 @@ Podmínky s využitím funkce ``#if`` i v základním, zjednodušeném zápisu l
   {{#if telefon}}
     Zadali jste e-mail i telefon
   {{/if}}
-{/if}
+{{/if}}
 ```
 
 ```handlebars
