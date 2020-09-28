@@ -41,8 +41,9 @@ V hlavním menu jste si vybrali {{3}}
 
 ## Komentáře
 
-Občas je vhodné, vložit si přímo do editoru komentář, který se nezobrazuje zákazníkům, ale slouží pouze jako naše pozmámka pro lepší orientaci v zadaných podmínkách do budoucna. Komentáře se vkládají následujícím způsobem:
+Občas je vhodné, vložit si přímo do editoru komentář, který se nezobrazuje zákazníkům, ale slouží pouze jako naše pozmámka pro lepší orientaci v zadaných podmínkách do budoucna. Komentáře se uvádějí znakem ``!`` hned po úvodních ``{{``. Stejně jako podmínky či blokové funkce musí být i komentář uzavřen pomocí ``}}``.
 
+Příklad:
 
 ```handlebars
 Zadali vybrali jste si: {{3}}
