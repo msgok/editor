@@ -10,13 +10,13 @@ Nejčastějším způsobem použití je vypsání proměnné. Proměnná může 
 
 **Vypsání proměnné ``email``**
 
-```
+```handlebars
 Zadali jste následující e-mail: {{email}}
 ```
 
 **Vypsání toho, co uživatel zadal v boxu č. 3**
 
-```
+```handlebars
 V hlavním menu jste si vybrali {{3}}
 ```
 
@@ -34,6 +34,6 @@ Každá proměnná i funkce musí být zároveň **vždy ukončena** dvojicí sl
 |-------------|-----------|
 | ``{ {nazev} }`` | ``{{nazev}}`` |
 | ``{ { nazev } }`` | ``{{nazev}}`` |
-| ``{{ nazev }}`` | ``{{nazev}}`` |
+| ``{{ nazev}}`` | ``{{nazev}}`` |
 | ``{{nazev}``  | ``{{nazev}}`` |
 | ``{nazev}`` | ``{{nazev}}`` |
