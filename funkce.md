@@ -8,9 +8,15 @@ Funkce se používají podobně jako podmínky nebo proměnné. Rozdíl je v tom
  - Pokud má být parametrem proměnná, píše se bez uvozovek (v případě objektu lze použít tečku k určení přesné cesty), např. ``nazevpromenne`` nebo ``api.hodnota``
  - Pokud má být parametrem logická hodnota (tedy ``true`` nebo ``false``) zapisuje se stejně jako proměnná, tedy bez uvozovek.
  
-Příklady správného zápisu uvádíme u jednotlivých funkcích:
+Příklady správného zápisu uvádíme u jednotlivých funkcích.
 
-## Funkce ``date``
+**Seznam funkcí**
+- [#date](#funkce-date)
+- [#inflect](#funkce-inflect)
+- [#compare](#funkce-compare)
+- [#button](#funkce-button)
+
+## Funkce ``#date``
 
 Slouží k úpravě formátu data a času. Běžně se při práci s API a dalšími systémy používá zápis pro datum ve formátu ``2020-09-01``, což není zcela obvyklé pro ne-IT prostředí. Tato funkce vám pomůže převést datum do srozumitelnější podoby.
 
@@ -38,11 +44,9 @@ Vypíše: ``2018-09-01`` (dnešní datum před dvěma lety)
 Vypíše: ``14.2.`` (datum z proměnné ``ordered`` převede do formátu ``14.2.``)
 
 
-## Funkce ``inflect``
+## Funkce ``#inflect``
 
 Slouží k správnému skloňování na základě jednotlivých tvarů (např. 1 objednávka, 2 objednávky, 10 objednávek).
-
-## Funkce ``inflect``
 
 ```handlebars
 {{#inflect A "B" "C" "D" E}}
@@ -69,3 +73,67 @@ Vypíše: ``13 objednávek`` (proměnná ``orders`` je číslo 13)
 ```
 
 Vypíše: ``zásilky`` (proměnná ``items`` je číslo 4)
+
+
+
+## Funkce ``#compare``
+
+Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#if`` nebo ``#unless`` kontroluje jen zda proměnná existuje nebo neexistuje. Díky funkci ``#compare`` můžete provádět složitější porovnávání.
+
+```handlebars
+{{#compare A "B" C}}X{{/#compare}}
+```
+
+*Pozor, jedná se o tzv. blokovou funkci, která sama o sobě nic nevypisuje, ale naopak vypíše nebo nevypíše to co zapíšete do jejího obsahu (X)*
+
+**Parametry**
+ - ``#compare`` název funkce
+ - ``A`` první proměnná *(číslo, text, proměnná)*
+ - ``B`` operátor viz níže *(text)*
+ - ``C`` druhý proměnná *(číslo, text, proměnná)*
+ 
+**Seznam operátorů**
+ - ``=`` pokud se zadaná proměnná ``A`` rovná proměnné ``B``
+ - ``!=`` pokud se zadaná proměnná ``A`` nerovná proměnné ``B``
+ - ``>`` pokud je proměnná ``A`` větší než proměnná ``B``
+ - ``>=`` pokud je proměnná ``A`` větší nebo rovna proměnné ``B``
+ - ``<`` pokud je proměnná ``A`` menší než proměnná ``B``
+ - ``<=`` pokud je proměnná ``A`` menší nebo rovna proměnné ``B``
+
+Příklady
+
+```handlebars
+{{#compare price ">" 1000}}Objednávka má hodnotu větší než 1000{{/compare}}
+```
+
+Vypíše: ``Objednávka má hodnotu větší než 1000`` (proměnná ``price`` je číslo 2500)
+
+```handlebars
+{{#compare email1 "!=" email2}}Zadené e-maily nejsou stejné{{/compare}}
+```
+
+Vypíše: ``Zadené e-maily nejsou stejné`` (proměnná ``email1`` info@messageok.com a ``email2`` je hello@messageok.com)
+
+
+
+## Funkce ``#button``
+
+Slouží k zobrazení tlačítka v prostoru obsahu zprávy, které přesune zákazníka na zadané číslo boxu.
+
+```handlebars
+{{#button A "B"}}
+```
+
+**Parametry**
+ - ``#button`` název funkce
+ - ``A`` ID boxu *(číslo)*
+ - ``B`` Název tlačítka *(text)*
+ 
+Příklady
+
+```handlebars
+{{#button 21 "Pokud nevidíte svou objednávku, klikněte zde"}}
+```
+
+Zobrazí tlačítko s textem ``Pokud nevidíte svou objednávku, klikněte zde``, které zákazníka přesune na box s číslem 21.
+
