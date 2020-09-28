@@ -11,49 +11,49 @@ Funkce se používají podobně jako podmínky nebo proměnné. Rozdíl je v tom
 Příklady správného zápisu uvádíme u jednotlivých funkcích.
 
 **Seznam funkcí**
-- [#date](#funkce-date)
-- [#inflect](#funkce-inflect)
+- [date](#funkce-date)
+- [inflect](#funkce-inflect)
+- [button](#funkce-button)
 - [#compare](#funkce-compare)
-- [#button](#funkce-button)
 
-## Funkce ``#date``
+## Funkce ``date``
 
 Slouží k úpravě formátu data a času. Běžně se při práci s API a dalšími systémy používá zápis pro datum ve formátu ``2020-09-01``, což není zcela obvyklé pro ne-IT prostředí. Tato funkce vám pomůže převést datum do srozumitelnější podoby.
 
 ```handlebars
-{{#date X "Y"}}
+{{date X "Y"}}
 ```
 
 **Parametry**
- - ``#date`` název funkce
+ - ``date`` název funkce
  - ``X`` zdrojové datum *(konkrétní text nebo proměnná)*
  - ``Y`` formát data *(text)*
 
 Příklady
 
 ```handlebars
-{{#date "2 years ago" "YYYY-mm-dd"}}
+{{date "2 years ago" "YYYY-mm-dd"}}
 ```
 
 Vypíše: ``2018-09-01`` (dnešní datum před dvěma lety)
 
 ```handlebars
-{{#date ordered "dd.mm."}}
+{{date ordered "dd.mm."}}
 ```
 
 Vypíše: ``14.2.`` (datum z proměnné ``ordered`` převede do formátu ``14.2.``)
 
 
-## Funkce ``#inflect``
+## Funkce ``inflect``
 
 Slouží k správnému skloňování na základě jednotlivých tvarů (např. 1 objednávka, 2 objednávky, 10 objednávek).
 
 ```handlebars
-{{#inflect A "B" "C" "D" E}}
+{{inflect A "B" "C" "D" E}}
 ```
 
 **Parametry**
- - ``#inflect`` název funkce
+ - ``inflect`` název funkce
  - ``A`` zdrojové množství *(číslo nebo list)*
  - ``B`` tvar slova pro jedeno množství *(text)*
  - ``C`` tvar slova pro dvě až pět množství *(text)*
@@ -63,16 +63,40 @@ Slouží k správnému skloňování na základě jednotlivých tvarů (např. 1
 Příklady
 
 ```handlebars
-{{#inflect orders "objednávka" "objednávky" "objednávek" true}}
+{{inflect orders "objednávka" "objednávky" "objednávek" true}}
 ```
 
 Vypíše: ``13 objednávek`` (proměnná ``orders`` je číslo 13)
 
 ```handlebars
-{{#inflect items "zásilka" "zásilky" "zásilek"}}
+{{inflect items "zásilka" "zásilky" "zásilek"}}
 ```
 
 Vypíše: ``zásilky`` (proměnná ``items`` je číslo 4)
+
+
+
+## Funkce ``button``
+
+Slouží k zobrazení tlačítka v prostoru obsahu zprávy, které přesune zákazníka na zadané číslo boxu.
+
+```handlebars
+{{button A "B"}}
+```
+
+**Parametry**
+ - ``button`` název funkce
+ - ``A`` ID boxu *(číslo)*
+ - ``B`` Název tlačítka *(text)*
+ 
+Příklady
+
+```handlebars
+{{button 21 "Pokud nevidíte svou objednávku, klikněte zde"}}
+```
+
+Zobrazí tlačítko s textem ``Pokud nevidíte svou objednávku, klikněte zde``, které zákazníka přesune na box s číslem 21.
+
 
 
 
@@ -81,10 +105,10 @@ Vypíše: ``zásilky`` (proměnná ``items`` je číslo 4)
 Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#if`` nebo ``#unless`` kontroluje jen zda proměnná existuje nebo neexistuje. Díky funkci ``#compare`` můžete provádět složitější porovnávání.
 
 ```handlebars
-{{#compare A "B" C}}X{{/#compare}}
+{{#compare A "B" C}}X{{/compare}}
 ```
 
-*Pozor, jedná se o tzv. blokovou funkci, která sama o sobě nic nevypisuje, ale naopak vypíše nebo nevypíše to co zapíšete do jejího obsahu (X)*
+*Pozor, jedná se o tzv. blokovou funkci (poznáte podle znaku ``#`` na začátku), která sama o sobě nic nevypisuje, ale naopak vypíše nebo nevypíše to co zapíšete do jejího obsahu (X)*
 
 **Parametry**
  - ``#compare`` název funkce
@@ -113,27 +137,3 @@ Vypíše: ``Objednávka má hodnotu větší než 1000`` (proměnná ``price`` j
 ```
 
 Vypíše: ``Zadené e-maily nejsou stejné`` (proměnná ``email1`` info@messageok.com a ``email2`` je hello@messageok.com)
-
-
-
-## Funkce ``#button``
-
-Slouží k zobrazení tlačítka v prostoru obsahu zprávy, které přesune zákazníka na zadané číslo boxu.
-
-```handlebars
-{{#button A "B"}}
-```
-
-**Parametry**
- - ``#button`` název funkce
- - ``A`` ID boxu *(číslo)*
- - ``B`` Název tlačítka *(text)*
- 
-Příklady
-
-```handlebars
-{{#button 21 "Pokud nevidíte svou objednávku, klikněte zde"}}
-```
-
-Zobrazí tlačítko s textem ``Pokud nevidíte svou objednávku, klikněte zde``, které zákazníka přesune na box s číslem 21.
-
