@@ -4,26 +4,21 @@ Podmínky umožňují v jednom boxu zobrazovat různé stavy na základě hodnot
 
 ## Jednoduchá podmínka
 
-Speciální syntaxí je možné také vytvářet jednoduché podmínky, které reagují na to, zda proměnná existuje nebo nikoliv. Pokud tedy chcete řádek se zadaným e-mailem vypsat jen pokud byl e-mail zadaný, můžete to provést následujícími způsoby.
+Pro jednoduchou podmínku, která reaguje na to, zda proměnná existuje nebo nikoliv doporučujeme využít funkci ``#exist``. Pokud tedy chcete řádek se zadaným e-mailem vypsat jen pokud byl e-mail zadaný, můžete to provést následujícími způsoby.
 
 ```handlebars
-{{#email}}Na zadaný e-mail {{email}} vám zašleme potvrzení.{{/email}}
+{{#exist email}}Na zadaný e-mail {{email}} vám zašleme potvrzení.{{/exist}}
 ```
 
-Speciální znak ``#`` na začátku říká, že se jedná o podmínku, která kontroluje existenci proměnné ``email``. 
+Speciální znak ``#`` na začátku říká, že se jedná o blokovou funkci, následuje název funkce ``exist``. 
 
-Zároveň je nutné podmínku také ukončit. K tomu slouží znak ``/``, následující názvem proměnné z podmínky, kterou kontrolujeme. Tím se podmínka ukončí.
+Zároveň je nutné podmínku také ukončit. K tomu slouží znak ``/``, následující názvem funkce, kterou ukončujeme.
 
 Podobným způsobem můžete vytvořit negativní podmínku:
 
 ```handlebars
-{{^email}}Nezadali jste e-mail, takže potvrzení vám zasílat nebudeme.{{/email}}
+{{#notexist email}}Nezadali jste e-mail, takže potvrzení vám zasílat nebudeme.{{/notexist}}
 ```
-
-Speciální znak ``^`` na začátku říká, že se jedná o negativní podmínku, která kontroluje neexistenci proměnné ``email``. 
-
-Stejně jako v předchozím případě je nutné podmínku také ukončit. K tomu slouží opět znak ``/``, následující názvem proměnné z podmínky, kterou kontrolujeme. Tím se podmínka ukončí.
-
 
 ## Podmínky buď a nebo
 
@@ -72,7 +67,7 @@ Uvedené podmínky s využitím ``#if`` nebo ``#unless`` vždy fungují tak, že
 
 ## Kombinace podmínek
 
-Podmínky s využitím funkce ``#if`` i v základním, zjednodušeném zápisu lze kombinovat. Zcela správné jsou tedy následující příklady:
+Podmínky s využitím funkce ``#if`` lze kombinovat. Zcela správné je tedy následující příklad:
 
 ```handlebars
 {{#if email}}
@@ -80,14 +75,6 @@ Podmínky s využitím funkce ``#if`` i v základním, zjednodušeném zápisu l
     Zadali jste e-mail i telefon
   {{/if}}
 {{/if}}
-```
-
-```handlebars
-{{#email}}
-{{#telefon}}
-Zadali jste e-mail i telefon
-{{/telefon}}
-{{/email}}
 ```
 
 Pokud používáte funkci ``#if`` lze její zápis kombinovat s funkcí ``#unless``, tedy například následujícími způsoby:
