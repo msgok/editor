@@ -155,6 +155,13 @@ Příklady
 
 Vypíše: ``Objednávka má hodnotu větší než 1000`` (proměnná ``price`` je číslo 2500)
 
+
+```handlebars
+{{#compare 123 "is" "Storno"}}Storno provádíme jen na telefonním čísle 800123456{{/compare}}
+```
+
+Vypíše: ``Storno provádíme jen na telefonním čísle 800123456`` (proměnná ``123`` obsahuje název tlačítka "Storno")
+
 ```handlebars
 {{#compare email1 "!=" email2}}Zadené e-maily nejsou stejné{{/compare}}
 ```
