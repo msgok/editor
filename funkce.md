@@ -15,6 +15,8 @@ Příklady správného zápisu uvádíme u jednotlivých funkcích.
 - [inflect](#funkce-inflect)
 - [button](#funkce-button)
 - [#compare](#funkce-compare)
+- [#exist](#funkce-exist)
+- [#notexist](#funkce-notexist)
 
 ## Funkce ``date``
 
@@ -121,7 +123,7 @@ Zobrazí tlačítko s textem ``Pokud nevidíte svou objednávku, klikněte zde``
 
 ## Funkce ``#compare``
 
-Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#if`` nebo ``#unless`` kontroluje jen zda proměnná existuje nebo neexistuje. Díky funkci ``#compare`` můžete provádět složitější porovnávání.
+Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#exist`` nebo ``#notexist`` kontroluje jen zda proměnná existuje nebo neexistuje. Díky funkci ``#compare`` můžete provádět složitější porovnávání (zda se proměnná rovná nějaké hodnotě, nebo je větší apod.).
 
 ```handlebars
 {{#compare A "B" C}}X{{/compare}}
@@ -136,8 +138,10 @@ Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#if`` 
  - ``C`` druhý proměnná *(číslo, text, proměnná)*
  
 **Seznam operátorů**
+ - ``is`` pokud se zadaná proměnná ``A`` rovná proměnné ``B``
  - ``=`` pokud se zadaná proměnná ``A`` rovná proměnné ``B``
  - ``!=`` pokud se zadaná proměnná ``A`` nerovná proměnné ``B``
+ - ``not`` pokud se zadaná proměnná ``A`` nerovná proměnné ``B``
  - ``>`` pokud je proměnná ``A`` větší než proměnná ``B``
  - ``>=`` pokud je proměnná ``A`` větší nebo rovna proměnné ``B``
  - ``<`` pokud je proměnná ``A`` menší než proměnná ``B``
