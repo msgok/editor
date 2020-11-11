@@ -17,6 +17,7 @@ Příklady správného zápisu uvádíme u jednotlivých funkcích.
 - [#compare](#funkce-compare)
 - [#exist](#funkce-exist)
 - [#notexist](#funkce-notexist)
+- [#qrpay](#funkce-qrpay)
 
 ## Funkce ``date``
 
@@ -167,3 +168,43 @@ Vypíše: ``Storno provádíme jen na telefonním čísle 800123456`` (proměnn�
 ```
 
 Vypíše: ``Zadené e-maily nejsou stejné`` (proměnná ``email1`` info@messageok.com a ``email2`` je hello@messageok.com)
+
+
+## Funkce ``qrpay``
+
+Vygeneruje obrázek pro QR platbu (používá API od qrplatba.cz).
+
+```handlebars
+{{qrpay "A" "B" "C" "D" "E"}}X{{/compare}}
+```
+
+**Parametry**
+ - ``qrpay`` název funkce
+ - ``A`` typ QR kódu *(hodnota: "cz" nebo "iban")*
+ - ``B`` číslo bankovního účtu nebo iban *(text, tzn. číslo účtu může být včetně předvolby nebo iban)*
+ - ``C`` kód banky nebo BIC *(číslo nebo text)*
+ - ``D`` částka *(číslo)*
+ - ``E`` variabilní symbol nebo reference *(číslo nebo text)*
+
+Volitelně lze přidat ještě další dva parametry: velikost v px *(číslo)* a měnu *(text)*, viz příklady.
+ 
+Příklady 
+
+```handlebars
+{{qrpay "cz" "123123123" "0100" "499" "20200001"}}
+```
+
+Vygeneruje obrázek s QR kódem pro platbu částky 499 Kč na účet 123123123/0100 s VS 20200001.
+
+```handlebars
+{{qrpay "iban" "CZ5508000000001234567899" "RZBCCZPP" "100" "20200001"}}
+```
+
+Vygeneruje obrázek s QR kódem pro platbu částky 100 EUR na účet CZ5508000000001234567899 s referencí 20200001.
+
+
+```handlebars
+{{qrpay "cz" "123123123" "0100" "150" "20200002" "250" "EUR"}}
+```
+
+Vygeneruje obrázek o velikosti 250px s QR kódem pro platbu částky 150 EUR na účet 123123123/0100 s VS 20200002.
