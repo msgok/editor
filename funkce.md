@@ -186,7 +186,7 @@ Vygeneruje obrázek pro QR platbu (používá API od qrplatba.cz).
  - ``D`` částka *(číslo)*
  - ``E`` variabilní symbol nebo reference *(číslo nebo text)*
 
-Volitelně lze přidat ještě další dva parametry: velikost v px *(číslo)* a měnu *(text)*, viz příklady.
+Volitelně lze přidat ještě další dva parametry: měnu *(text)* a velikost v px *(číslo)*, viz příklady.
  
 Příklady 
 
@@ -204,7 +204,7 @@ Vygeneruje obrázek s QR kódem pro platbu částky 100 EUR na účet CZ55080000
 
 
 ```handlebars
-{{qrpay "cz" "123123123" "0100" "150" "20200002" "250" "EUR"}}
+{{qrpay "cz" "123123123" "0100" "150" "20200002" "EUR" "250"}}
 ```
 
 Vygeneruje obrázek o velikosti 250px s QR kódem pro platbu částky 150 EUR na účet 123123123/0100 s VS 20200002.
