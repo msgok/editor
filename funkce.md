@@ -175,7 +175,7 @@ Vypíše: ``Zadené e-maily nejsou stejné`` (proměnná ``email1`` info@message
 Vygeneruje obrázek pro QR platbu (používá API od qrplatba.cz).
 
 ```handlebars
-{{qrpay "A" "B" "C" "D" "E"}}X{{/compare}}
+{{qrpay "A" "B" "C" "D" "E"}}
 ```
 
 **Parametry**
