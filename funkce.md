@@ -197,6 +197,12 @@ Příklady
 Vygeneruje obrázek s QR kódem pro platbu částky 499 Kč na účet 123123123/0100 s VS 20200001.
 
 ```handlebars
+{{qrpay "cz" "123123123" "0100" order.amount order.vs}}
+```
+
+Vygeneruje obrázek s QR kódem pro platbu na účet 123123123/0100 s částkou načtenou z proměnné ``order.amount`` a VS načteným z ``order.vs``.
+
+```handlebars
 {{qrpay "iban" "CZ5508000000001234567899" "RZBCCZPP" "100" "20200001"}}
 ```
 
