@@ -17,7 +17,8 @@ Příklady správného zápisu uvádíme u jednotlivých funkcích.
 - [#compare](#funkce-compare)
 - [#exist](#funkce-exist)
 - [#notexist](#funkce-notexist)
-- [#qrpay](#funkce-qrpay)
+- [qrpay](#funkce-qrpay)
+- [currency](#funkce-currency)
 
 ## Funkce ``date``
 
@@ -214,3 +215,32 @@ Vygeneruje obrázek s QR kódem pro platbu částky 100 EUR na účet CZ55080000
 ```
 
 Vygeneruje obrázek o velikosti 250px s QR kódem pro platbu částky 150 EUR na účet 123123123/0100 s VS 20200002.
+
+
+
+## Funkce ``currency``
+
+Upravuje zadané číslo na správný formát částky.
+
+```handlebars
+{{currency A" "B"}}
+```
+
+**Parametry**
+ - ``currency`` název funkce
+ - ``A`` číslo *(číslo nebo proměnná)*
+ - ``B`` měna *(řetězec EUR nebo Kč (Kč je výchozí))*
+
+Příklady
+
+```handlebars
+Zaplaťte prosím {{currency topay}} na náš bankovní účet.
+```
+
+Vypíše: ``Zaplaťte prosím 1 199,90 Kč na náš bankovní účet`` (proměnná ``topay`` obsahuje číslo ``1199.9``)
+
+```handlebars
+Zaplaťte prosím {{currency topayeur "EUR"}} na náš bankovní účet.
+```
+
+Vypíše: ``Zaplaťte prosím 99,99 € na náš bankovní účet`` (proměnná ``topayeur`` obsahuje číslo ``99.99``)
