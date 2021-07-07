@@ -242,7 +242,7 @@ Vypíše: ``Zaplaťte prosím 99,99 € na náš bankovní účet`` (proměnná 
 Zobrazuje grafický progress bar, který zobrazuje jednotlivé stavy.
 
 ```handlebars
-{{progrss A "B" "C"}}
+{{progress A "B" "C"}}
 ```
 
 **Parametry**
