@@ -254,5 +254,5 @@ Zobrazuje grafický progress bar, který zobrazuje jednotlivé stavy.
 Příklady
 
 ```handlebars
-{{progrss 1 "icon-delivery" "Doručeno"}}
+{{progress 1 "icon-delivery" "Doručeno"}}
 ```
