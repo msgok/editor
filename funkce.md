@@ -10,17 +10,6 @@ Funkce se používají podobně jako podmínky nebo proměnné. Rozdíl je v tom
  
 Příklady správného zápisu uvádíme u jednotlivých funkcích.
 
-**Seznam funkcí**
-- [date](#funkce-date)
-- [inflect](#funkce-inflect)
-- [button](#funkce-button)
-- [#compare](#funkce-compare)
-- [#exist](#funkce-exist)
-- [#notexist](#funkce-notexist)
-- [qrpay](#funkce-qrpay)
-- [currency](#funkce-currency)
-- [progress](#funkce-progress)
-
 ## Funkce ``date``
 
 Slouží k úpravě formátu data a času. Běžně se při práci s API a dalšími systémy používá zápis pro datum ve formátu ``2020-09-01``, což není zcela obvyklé pro ne-IT prostředí. Tato funkce vám pomůže převést datum do srozumitelnější podoby.
@@ -265,5 +254,5 @@ Zobrazuje grafický progress bar, který zobrazuje jednotlivé stavy.
 Příklady
 
 ```handlebars
-{{progrss 1 "ico-delivery" "Doručeno"}}
+{{progrss 1 "icon-delivery" "Doručeno"}}
 ```
