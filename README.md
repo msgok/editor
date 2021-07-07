@@ -23,6 +23,13 @@ Každá proměnná i funkce musí být zároveň **vždy ukončena** dvojicí sl
 | ``{nazev}`` | ``{{nazev}}`` |
 
 
+## Zabezpečená proměnná
+
+Pokud chcete ve scénáři pracovat s proměnnou, kterou používáte v dalších aplikacích nebo podmínkách a nechcete, aby se propisovala do prohlížeče (což může znamenat bezpečnostní riziko) můžete její název uvést speciálním znakem ``$``, který znamená, že nebude propsána do prohlížeče (zároveň to znamená, že tuto proměnnou je možné použít pouze do prvního mezikorku který vyžaduje vstup od zákazníka tzn. tlačítko, odpověď apod. pak již nebude proměnná s ``$`` dostupná).
+
+Příklady názvu proměnné: ``$email`` který lze následně použít v aplikacích či podmínkách jako ``{{$email}}``.
+
+
 ## Vložení proměnné
 
 Nejčastějším způsobem použití je vypsání proměnné. Proměnná může mít své vlastní jméno (typicky pokud si vstup od uživatele pojmenujete vlastním výrazem) a nebo můžete použít automatické vytváření proměnných z jednotlivých boxů. V praxi to znamená to, že každá odpověď uživatele (ať už psaná nebo formou výběru tlačítka) se ukládá jako proměnná s číslem boxu.
