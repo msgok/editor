@@ -19,6 +19,7 @@ Příklady správného zápisu uvádíme u jednotlivých funkcích.
 - [#notexist](#funkce-notexist)
 - [qrpay](#funkce-qrpay)
 - [currency](#funkce-currency)
+- [progress](#funkce-progress)
 
 ## Funkce ``date``
 
@@ -244,3 +245,25 @@ Zaplaťte prosím {{currency topayeur "EUR"}} na náš bankovní účet.
 ```
 
 Vypíše: ``Zaplaťte prosím 99,99 € na náš bankovní účet`` (proměnná ``topayeur`` obsahuje číslo ``99.99``)
+
+
+
+## Funkce ``progress``
+
+Zobrazuje grafický progress bar, který zobrazuje jednotlivé stavy.
+
+```handlebars
+{{progrss A "B" "C"}}
+```
+
+**Parametry**
+ - ``progress`` název funkce
+ - ``A`` až po jaký krok má být progress aktivní *(číslo nebo proměnná)*
+ - ``B`` název ikonky
+ - ``C`` název kroku
+
+Příklady
+
+```handlebars
+{{progrss 1 "ico-delivery" "Doručeno"}}
+```
