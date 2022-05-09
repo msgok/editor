@@ -138,6 +138,7 @@ Slouží složitějšímu vyhodnocování podmínek. Běžné použití ``#exist
  - ``>=`` pokud je proměnná ``A`` větší nebo rovna proměnné ``B``
  - ``<`` pokud je proměnná ``A`` menší než proměnná ``B``
  - ``<=`` pokud je proměnná ``A`` menší nebo rovna proměnné ``B``
+ - ``typeof`` pokud se typ proměnné ``A`` rovná zadanému typu ``B``
 
 Příklady
 
